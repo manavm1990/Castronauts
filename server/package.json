@@ -1,9 +1,12 @@
 {
   "dependencies": {
+    "@apollo/server": "^4.4.1",
     "dotenv": "^16.0.3",
-    "graphql": "^16.6.0"
+    "graphql": "^16.6.0",
+    "graphql-tag": "^2.12.6"
   },
   "name": "server",
+  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -15,6 +18,7 @@
   "description": "",
   "devDependencies": {
     "@graphql-eslint/eslint-plugin": "^3.16.1",
+    "@graphql-tools/mock": "^8.7.19",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-config-standard": "^17.0.0",
