@@ -2,7 +2,7 @@ import { gql } from "graphql-tag";
 
 const typeDefs = gql`
   type Query {
-    indexTracks: [Track!]!
+    tracks: [Track!]!
   }
 
   "A track is a group of modules that teaches about a specific topic"
