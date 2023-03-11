@@ -6,7 +6,6 @@ import { TRACKS } from "../graphql/type-defs";
 import TrackCard from "./track-card";
 
 export default function Main() {
-  // TODO: Move to custom 🪝 hook.
   const { loading, error, data } = useQuery(TRACKS);
 
   if (loading) return <p>Loading...</p>;
