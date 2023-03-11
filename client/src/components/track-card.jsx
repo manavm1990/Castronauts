@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 
 export default function TrackCard({ track }) {
   return (
-    <Card className="col-12 col-sm-6 col-md-4 col-lg-3">
+    <Card>
       <Card.Img variant="top" src={track.thumbnail} />
       <Card.Body as="section">
         <Card.Title as="h2" className="mb-5 text-center text-dark">

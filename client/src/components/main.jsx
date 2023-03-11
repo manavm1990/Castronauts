@@ -1,5 +1,7 @@
 import { useQuery } from "@apollo/client";
+import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 import { TRACKS } from "../graphql/type-defs";
 import TrackCard from "./track-card";
 
@@ -12,10 +14,14 @@ export default function Main() {
   if (error) return <p>Error :(</p>;
 
   return (
-    <Container as="main" fluid className="bg-light">
-      {data?.tracks.map((track) => (
-        <TrackCard key={track.id} track={track} />
-      ))}
+    <Container as="main" className="bg-light py-4">
+      <Row>
+        {data?.tracks.map((track) => (
+          <Col key={track.id} md={4} className="my-2">
+            <TrackCard track={track} />
+          </Col>
+        ))}
+      </Row>
     </Container>
   );
 }
