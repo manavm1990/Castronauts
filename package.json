@@ -1,5 +1,13 @@
 {
+  "name": "castronauts-back",
+  "private": true,
   "dependencies": {
     "concurrently": "^7.6.0"
+  },
+  "scripts": {
+    "client": "cd client && npm run dev",
+    "install": "cd client && npm install && cd ../server && npm install",
+    "server": "node --watch server/src/index.js",
+    "start": "concurrently \"npm run server\" \"npm run client\""
   }
 }
