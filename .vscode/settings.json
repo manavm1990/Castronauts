@@ -14,5 +14,5 @@
   "files.autoSave": "onFocusChange",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.validate.enable": false,
-  "cSpell.words": ["castronauts"]
+  "cSpell.words": ["Castronaut", "castronauts"]
 }
