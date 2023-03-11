@@ -1,3 +1,4 @@
+import Footer from "./components/footer";
 import Header from "./components/header";
 import Main from "./layout/main";
 
@@ -12,6 +13,7 @@ export default function App() {
     >
       <Header />
       <Main />
+      <Footer />
     </div>
   );
 }
