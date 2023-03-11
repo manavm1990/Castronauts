@@ -1,17 +1,20 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
-import { addMocksToSchema } from "@graphql-tools/mock";
-import { makeExecutableSchema } from "@graphql-tools/schema";
-import { mocks, typeDefs } from "./graphql/index.js";
+import { TrackAPI, resolvers, typeDefs } from "./graphql/index.js";
 
 const server = new ApolloServer({
   typeDefs,
-  schema: addMocksToSchema({
-    schema: makeExecutableSchema({ typeDefs }),
-    mocks,
-  }),
+  resolvers,
 });
 
-const { url } = await startStandaloneServer(server, {});
+const { url } = await startStandaloneServer(server, {
+  context: () => {
+    return {
+      dataSources: {
+        trackAPI: new TrackAPI(),
+      },
+    };
+  },
+});
 
 console.info(`🚀  Server ready at ${url}`);
