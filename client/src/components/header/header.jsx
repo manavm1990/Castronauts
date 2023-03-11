@@ -2,7 +2,7 @@ import logo from "@/assets/space_cat_logo@2x.png";
 
 export default function Header() {
   return (
-    <header className="container py-3">
+    <header className="container py-3 border-bottom" id="header">
       <figure className="d-flex align-items-center justify-content-center">
         <img
           src={logo}

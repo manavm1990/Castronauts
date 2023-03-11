@@ -1,3 +1,9 @@
 body {
   color: rgb(242, 92, 193);
 }
+
+/* Have to create id and use '!important' 💩 to fight 🥊 BS. */
+#header {
+  border-color: rgb(255, 163, 224) !important;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.15);
+}
