@@ -2,6 +2,7 @@
   "name": "castronauts-back",
   "private": true,
   "dependencies": {
+    "@apollo/datasource-rest": "^5.0.2",
     "concurrently": "^7.6.0"
   },
   "scripts": {
