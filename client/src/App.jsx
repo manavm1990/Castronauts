@@ -1,19 +1,10 @@
-import Footer from "./components/footer";
-import Header from "./components/header";
-import Main from "./layout/main";
+import Main from "./components/main";
+import Layout from "./layout/layout";
 
 export default function App() {
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateRows: "min-content 1fr min-content",
-        height: "100vh",
-      }}
-    >
-      <Header />
+    <Layout>
       <Main />
-      <Footer />
-    </div>
+    </Layout>
   );
 }
