@@ -1,5 +1,10 @@
-import Button from "react-bootstrap/Button";
+import Main from "./components/main";
+import Layout from "./layout/layout";
 
 export default function App() {
-  return <Button>Click me</Button>;
+  return (
+    <Layout>
+      <Main />
+    </Layout>
+  );
 }
