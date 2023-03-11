@@ -3,7 +3,8 @@
     "@apollo/server": "^4.4.1",
     "dotenv": "^16.0.3",
     "graphql": "^16.6.0",
-    "graphql-tag": "^2.12.6"
+    "graphql-tag": "^2.12.6",
+    "uuid": "^9.0.0"
   },
   "name": "server",
   "type": "module",
