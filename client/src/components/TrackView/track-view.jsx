@@ -12,21 +12,7 @@ export default function TrackDetail({ track }) {
       <hr />
       <Card.Body>
         <Details track={track} />
-        <section>
-          <section className="border-bottom py-4">
-            <h2 className="fw-bold text-center text-dark">Modules</h2>
-            <ul className="text-secondary">
-              {track.modules.map((module) => (
-                <ListItem key={module.id}>
-                  <h3 className="h6 mb-0">{module.title}</h3>
-                  <p className="mb-0">
-                    {calcHumanReadableTimeFromSeconds(module.length)}
-                  </p>
-                </ListItem>
-              ))}
-            </ul>
-          </section>
-        </section>
+        <ModuleList modules={track.modules} />
       </Card.Body>
     </Card>
   );
@@ -42,6 +28,7 @@ TrackDetail.propTypes = {
   track: PropTypes.shape({
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
     thumbnail: PropTypes.string,
     length: PropTypes.number,
     modulesCount: PropTypes.number,
