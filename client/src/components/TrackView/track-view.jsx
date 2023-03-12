@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
 import Card from "react-bootstrap/Card";
-import ListItem from "../list-item";
 import Details from "./details";
-import { calcHumanReadableTimeFromSeconds } from "@/utils";
+import ModuleList from "./module-list";
 
 export default function TrackDetail({ track }) {
   return (
