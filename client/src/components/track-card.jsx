@@ -4,7 +4,13 @@ import Card from "react-bootstrap/Card";
 export default function TrackCard({ track }) {
   return (
     <Card>
-      <Card.Img variant="top" src={track.thumbnail} />
+      <Card.Img
+        variant="top"
+        src={track.thumbnail}
+        style={{
+          filter: "grayscale(60%)",
+        }}
+      />
       <Card.Body as="section">
         <Card.Title as="h2" className="mb-5 text-center text-dark">
           {track.title}
