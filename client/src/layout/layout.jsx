@@ -1,8 +1,8 @@
-import PropTypes from "prop-types";
+import { Outlet } from "react-router-dom";
 import Footer from "../components/footer";
 import Header from "../components/header";
 
-export default function Layout({ children }) {
+export default function Layout() {
   return (
     <div
       style={{
@@ -12,12 +12,8 @@ export default function Layout({ children }) {
       }}
     >
       <Header />
-      {children}
+      <Outlet />
       <Footer />
     </div>
   );
 }
-
-Layout.propTypes = {
-  children: PropTypes.node,
-};

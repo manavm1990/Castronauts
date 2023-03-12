@@ -2,13 +2,19 @@ import { useQuery } from "@apollo/client";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import Spinner from "react-bootstrap/Spinner";
+import TrackCard from "../components/track-card";
 import { TRACKS } from "../graphql/type-defs";
-import TrackCard from "./track-card";
 
 export default function Main() {
   const { loading, error, data } = useQuery(TRACKS);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading)
+    return (
+      <Spinner animation="border" variant="success">
+        <p className="visually-hidden">Loading...</p>
+      </Spinner>
+    );
 
   if (error) return <p>Error :(</p>;
 
