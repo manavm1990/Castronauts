@@ -16,3 +16,27 @@ export const TRACKS = gql`
     }
   }
 `;
+
+export const GET_TRACK = gql`
+  query GetTrack($trackId: ID!) {
+    track(id: $trackId) {
+      id
+      title
+      thumbnail
+      length
+      modulesCount
+      description
+      numberOfViews
+      author {
+        id
+        name
+        photo
+      }
+      modules {
+        id
+        title
+        length
+      }
+    }
+  }
+`;
