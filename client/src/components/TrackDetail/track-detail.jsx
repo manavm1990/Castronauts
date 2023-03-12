@@ -1,5 +1,3 @@
-import { regular } from "@fortawesome/fontawesome-svg-core/import.macro"; // <-- import styles to be used
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 import Card from "react-bootstrap/Card";
 
@@ -14,7 +12,6 @@ export default function TrackDetail({ track }) {
         <section className="d-flex justify-content-between">
           <section>
             <h2>Track Details</h2>
-            <FontAwesomeIcon icon={regular("coffee")} />
           </section>
         </section>
       </Card.Body>
