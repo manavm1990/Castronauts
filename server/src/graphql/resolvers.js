@@ -1,6 +1,6 @@
 /**
   * A resolver function populates the data for a field in your schema.
-  *  The function has four parameters. 
+  * The function has four parameters. 
   * The first, parent, contains the returned data of the previous function in the 
 resolver chain.
   * The second, args, is an object that contains all the arguments provided to the field. 
