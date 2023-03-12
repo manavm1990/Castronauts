@@ -1,10 +1,24 @@
+import { useMutation } from "@apollo/client";
 import PropTypes from "prop-types";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import { INCREMENT_TRACK_VIEWS } from "../graphql/type-defs";
 
 export default function TrackCard({ track }) {
+  const [incrementTrackViews] = useMutation(INCREMENT_TRACK_VIEWS, {
+    variables: { incrementTrackViewsId: track.id },
+    onCompleted(data) {
+      console.log(data);
+    },
+  });
+
   return (
-    <Link to={`/${track.id}`}>
+    <Link
+      to={`/${track.id}`}
+      onClick={() => {
+        incrementTrackViews(track.id);
+      }}
+    >
       <Card>
         <Card.Img
           variant="top"
