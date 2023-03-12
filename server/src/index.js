@@ -8,10 +8,11 @@ const server = new ApolloServer({
 });
 
 const { url } = await startStandaloneServer(server, {
-  context: () => {
+  context() {
+    const { cache } = server;
     return {
       dataSources: {
-        trackAPI: new TrackAPI(),
+        trackAPI: new TrackAPI({ cache }),
       },
     };
   },
