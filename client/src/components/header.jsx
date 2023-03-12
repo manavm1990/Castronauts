@@ -1,4 +1,5 @@
 import logo from "@/assets/space_cat_logo@2x.png";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -11,13 +12,15 @@ export default function Header() {
         }}
       >
         <figure className="d-flex align-items-center justify-content-center">
-          <img
-            src={logo}
-            alt="Space Cat Logo - pink circle with 😸 in 🧑‍🚀 suit"
-            width={60}
-            height={60}
-            className="me-2"
-          />
+          <Link to="/">
+            <img
+              src={logo}
+              alt="Space Cat Logo - pink circle with 😸 in 🧑‍🚀 suit"
+              width={60}
+              height={60}
+              className="me-2"
+            />
+          </Link>
           <figcaption>
             <h1 className="h4 fw-bold my-0">Castronaut</h1>
             <h2 className="h6 fw-normal my-0">Kitty Space Academy</h2>
