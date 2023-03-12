@@ -4,8 +4,8 @@ import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 import Spinner from "react-bootstrap/Spinner";
 
-export default function Query({ typeDef, children }) {
-  const { loading, error, data } = useQuery(typeDef);
+export default function Query({ typeDef, queryOptions, children }) {
+  const { loading, error, data } = useQuery(typeDef, queryOptions);
 
   const render = () => {
     if (loading) return <Spinner animation="border" variant="success" />;
@@ -27,7 +27,12 @@ export default function Query({ typeDef, children }) {
   );
 }
 
+Query.defaultProps = {
+  queryOptions: {},
+};
+
 Query.propTypes = {
-  children: PropTypes.func.isRequired,
   typeDef: PropTypes.object.isRequired,
+  queryOptions: PropTypes.object,
+  children: PropTypes.func.isRequired,
 };
