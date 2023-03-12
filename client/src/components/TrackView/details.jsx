@@ -40,12 +40,14 @@ export default function Details({ track }) {
           </li>
         </ul>
       </section>
-      <Button
-        variant="primary"
-        className="bg-primary border border-secondary mt-4 text-white"
-      >
-        <Play /> Track
-      </Button>
+      <div className="border-bottom py-4">
+        <Button
+          variant="primary"
+          className="bg-primary border border-secondary mt-4 text-white"
+        >
+          <Play /> Track
+        </Button>
+      </div>
     </section>
   );
 }
