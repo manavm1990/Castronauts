@@ -18,7 +18,7 @@ export default function Query({ typeDef, children }) {
   if (data && data.length)
     return <Alert variant="warning">⚠️ No data :(</Alert>;
 
-  // RENDER PROPS - a component receives a function as a prop and uses that function to render content
+  // RENDER PROPS - a component receives a function as a prop and uses that function to render content.
   return children(data);
 }
 
