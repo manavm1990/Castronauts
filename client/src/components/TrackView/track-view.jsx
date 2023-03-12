@@ -42,7 +42,7 @@ TrackDetail.propTypes = {
       PropTypes.shape({
         id: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
-        length: PropTypes.string,
+        length: PropTypes.number,
       })
     ),
   }).isRequired,
