@@ -10,14 +10,13 @@ export default function Query({ typeDef, queryOptions, children }) {
   const render = () => {
     if (loading) return <Spinner animation="border" variant="success" />;
     if (error) return <Alert variant="danger">❗ Error :( 🥅</Alert>;
-    if (data && data.length)
+    if (data && data.length === 0)
       return <Alert variant="warning">⚠️ No data :(</Alert>;
-
-    // RENDER PROPS - a component receives a function as a prop and uses that function to render content.
-    return children(data);
   };
 
-  return (
+  return data ? (
+    children(data)
+  ) : (
     <Container
       as="main"
       className="bg-light py-4 d-flex align-items-center justify-content-center"
