@@ -18,6 +18,35 @@ export default {
     },
   },
 
+  Mutation: {
+    async incrementTrackViews(
+      // We won't need the parent argument in this resolver, because it's for a root field in our schema.
+      _,
+      { id },
+      { dataSources }
+    ) {
+      // ⚠️ Unless `updateTrackViews` throws an error 🥅, we must wrap all of this in a try/catch block.
+      // `catch` on `await` will only be triggered if the `updateTrackViews` function throws an error (it doesn't return an error)
+      try {
+        const updatedTrack = await dataSources.trackAPI.updateTrackViews(id);
+
+        return {
+          code: 200,
+          success: true,
+          message: `Track views incremented successfully for id: ${id}.`,
+          track: updatedTrack,
+        };
+      } catch (e) {
+        return {
+          code: e.extensions.response.status,
+          success: false,
+          message: e.extensions.response.body,
+          track: null,
+        };
+      }
+    },
+  },
+
   // The resolver for the Track type's modules field
   // Keeping it separated means it only gets called when the modules field is requested
   // (parent is the track) - RESOLVER ⛓️
