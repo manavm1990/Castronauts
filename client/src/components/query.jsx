@@ -18,7 +18,10 @@ export default function Query({ typeDef, children }) {
   };
 
   return (
-    <Container as="main" className="bg-light py-4">
+    <Container
+      as="main"
+      className="bg-light py-4 d-flex align-items-center justify-content-center"
+    >
       {render()}
     </Container>
   );
