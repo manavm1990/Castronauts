@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import Card from "react-bootstrap/Card";
+import Details from "./details";
 
 export default function TrackDetail({ track }) {
   return (
@@ -9,15 +10,17 @@ export default function TrackDetail({ track }) {
       </Card.Title>
       <hr />
       <Card.Body>
-        <section className="d-flex justify-content-between">
-          <section>
-            <h2>Track Details</h2>
-          </section>
-        </section>
+        <Details track={track} />
       </Card.Body>
     </Card>
   );
 }
+
+TrackDetail.defaultProps = {
+  track: {
+    numberOfViews: 0,
+  },
+};
 
 TrackDetail.propTypes = {
   track: PropTypes.shape({
@@ -31,5 +34,6 @@ TrackDetail.propTypes = {
       name: PropTypes.string.isRequired,
       photo: PropTypes.string,
     }),
+    numberOfViews: PropTypes.number,
   }).isRequired,
 };

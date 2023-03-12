@@ -1,7 +1,7 @@
 import Image from "react-bootstrap/Image";
 import Stack from "react-bootstrap/Stack";
 import { useParams } from "react-router-dom";
-import TrackDetail from "../components/TrackDetail/track-detail";
+import TrackDetail from "../components/TrackView/track-view";
 import Query from "../components/query";
 import { GET_TRACK } from "../graphql/type-defs";
 
