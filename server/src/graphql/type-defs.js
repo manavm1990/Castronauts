@@ -6,6 +6,23 @@ const typeDefs = gql`
     track(id: ID!): Track
   }
 
+  type Mutation {
+    incrementTrackViews(id: ID!): IncrementTrackViewsResponse!
+  }
+
+  # Convention: name the mutation response type after the mutation name with "Response" appended
+  type IncrementTrackViewsResponse {
+    "Akin to an HTTP status code, GraphQL gives you the option to use your own codes."
+    code: Int!
+    success: Boolean!
+
+    "A message to pass along to the frontend, such as a success or error message."
+    message: String!
+
+    "The track that the number of views was incremented for"
+    track: Track
+  }
+
   "A track is a group of modules that teaches about a specific topic"
   type Track {
     id: ID!
