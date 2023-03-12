@@ -15,6 +15,18 @@ const typeDefs = gql`
     "The track's approximate length to complete, in minutes"
     length: Int
     modulesCount: Int
+    "Supports MD too! This is the track's complete description"
+    description: String
+    numberOfViews: Int
+    modules: [Module]!
+  }
+
+  "A module is a single unit of teaching. Multiple modules compose a track"
+  type Module {
+    id: ID!
+    title: String!
+    "The module's length in minutes"
+    length: Int
   }
 
   type Author {
