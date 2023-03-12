@@ -18,7 +18,7 @@ const typeDefs = gql`
     "Supports MD too! This is the track's complete description"
     description: String
     numberOfViews: Int
-    modules: [Module]!
+    modules: [Module!]!
   }
 
   "A module is a single unit of teaching. Multiple modules compose a track"
